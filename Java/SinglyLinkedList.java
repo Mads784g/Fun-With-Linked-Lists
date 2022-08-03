@@ -16,5 +16,14 @@ class SinglyLinkedList{
         }
     }
 
+    public void printLinkedList(){
+        Node current = head;
+        while(current != null){
+            System.out.print(current.getData() + " -> ");
+            current = current.getNextNode();
+        }
+        System.out.print("NULL \n");
+    }
+
     
 }
