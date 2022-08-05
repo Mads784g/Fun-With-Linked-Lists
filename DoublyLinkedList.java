@@ -1,10 +1,25 @@
 public class DoublyLinkedList {
-    NodeDouble head;
-    NodeDouble tail;
+    private NodeDouble head;
+    private NodeDouble tail;
 
     public DoublyLinkedList(){
         this.head = null;
         this.tail = null;
+    }
+
+    public NodeDouble getHead() {
+        return head;
+    }
+    public void setHead(NodeDouble head) {
+        this.head = head;
+    }
+
+    public NodeDouble getTail() {
+        return tail;
+    }
+
+    public void setTail(NodeDouble tail) {
+        this.tail = tail;
     }
 
     public void addToHead(int data){
@@ -77,6 +92,46 @@ public class DoublyLinkedList {
             newNode.getNextNode().setPrevNode(newNode);
         }
         
+    }
+
+    public int deleteNode(int pos){
+        NodeDouble current = this.head;
+        int counter = 1;
+
+        if (pos == 0){
+            return this.removeHead();
+        }
+
+        while (counter != pos){
+
+            if (current == null){
+                return -1;
+            }
+            current = current.getNextNode();
+            counter++;
+        }
+
+        NodeDouble prev = current.getPrevNode();
+        NodeDouble next = current.getNextNode();
+
+        prev.setNextNode(next);
+        next.setPrevNode(prev);
+        return current.getData();
+
+    }
+
+    public int search(int data){
+        NodeDouble current = this.head;
+        int counter = 0;
+        while (current != null){
+            if (current.getData() == data){
+                return counter;
+            } else {
+                current = current.getNextNode();
+                counter++;
+            }
+        }
+        return -1;
     }
 
     public void printLinkedList(){
