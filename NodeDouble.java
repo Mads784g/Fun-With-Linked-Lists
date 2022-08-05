@@ -1,7 +1,7 @@
 public class NodeDouble {
     private int data;
-    private Node prevNode;
-    private Node nextNode;
+    private NodeDouble prevNode;
+    private NodeDouble nextNode;
 
     public NodeDouble(int data){
         this.data = data;
@@ -13,11 +13,11 @@ public class NodeDouble {
         return this.data;
     }
 
-    public Node getPrevNode(){
+    public NodeDouble getPrevNode(){
         return this.prevNode;
     }
 
-    public Node getNextNode(){
+    public NodeDouble getNextNode(){
         return this.nextNode;
     }
 
@@ -25,11 +25,11 @@ public class NodeDouble {
         this.data = data;
     }
 
-    public void setPrevNode(Node prevNode){
+    public void setPrevNode(NodeDouble prevNode){
         this.prevNode = prevNode;
     }
 
-    public void setNextNode(Node nextNode){
+    public void setNextNode(NodeDouble nextNode){
         this.nextNode = nextNode;
     }
 }
